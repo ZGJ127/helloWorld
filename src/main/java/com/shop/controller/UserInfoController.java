@@ -23,7 +23,7 @@ public class UserInfoController {
     @RequestMapping("/showInfo/{userId}")
     public String showUserInfo(ModelMap modelMap, @PathVariable int userId) {
         LOGGER.info("查看用户：" + userId);
-        UserInfo userInfo = userInfoService.getById(1);
+        UserInfo userInfo = userInfoService.getById(userId);
         LOGGER.info("用户信息" + userInfo);
         modelMap.addAttribute("userInfo", userInfo);
         return "/user/showInfo";
